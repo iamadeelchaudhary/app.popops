@@ -1,0 +1,54 @@
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+
+/* Base Styles */
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: linear-gradient(135deg, #0066ff 0%, #00d9ff 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Phone Mockup */
+.phone-mockup {
+  box-shadow: 0 50px 100px -20px rgba(10, 22, 40, 0.25);
+  border: 10px solid #0a1628;
+  border-radius: 40px;
+}
+
+/* Doc Styles */
+.doc h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  color: #0A1628;
+}
+
+/* Tailwind Configuration (Custom Colors and Animations) */
+:root {
+  --color-brand-primary: #0066FF;
+  --color-brand-secondary: #00D9FF;
+  --color-brand-navy: #0A1628;
+  --color-brand-slate: #64748B;
+  --color-brand-light: #F1F5F9;
+}
+
+/* Animation for float effect */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}

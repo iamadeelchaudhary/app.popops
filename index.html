@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="google-site-verification"
+      content="VLC1vPxIgJxZtt0yNUXhkOWasuolOcv1u3hgDdhTYnk"
+    />
+    <title>PopOps | In-App Messaging for Android Developers</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brandPrimary: "#0066FF",
+              brandSecondary: "#00D9FF",
+              brandNavy: "#0A1628",
+              brandSlate: "#64748B",
+              brandLight: "#F1F5F9",
+            },
+            animation: { float: "float 6s ease-in-out infinite" },
+            keyframes: {
+              float: {
+                "0%, 100%": { transform: "translateY(0)" },
+                "50%": { transform: "translateY(-20px)" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="bg-white text-brandNavy">
+    <!-- Nav -->
+    <nav
+      class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-brandLight"
+    >
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between h-20 items-center"
+      >
+        <a href="index.html" class="flex items-center">
+          <img style="width: 30px" src="popops-logo.png" />
+          <span class="ml-3 text-2xl font-bold tracking-tight">PopOps</span>
+        </a>
+        <div class="hidden md:flex items-center space-x-8 font-medium">
+          <a href="index.html" class="text-brandPrimary">Product</a>
+          <a href="about.html" class="hover:text-brandPrimary transition-colors"
+            >About</a
+          >
+          <a
+            href="privacy.html"
+            class="hover:text-brandPrimary transition-colors"
+            >Privacy</a
+          >
+          <a href="terms.html" class="hover:text-brandPrimary transition-colors"
+            >Terms</a
+          >
+          <a
+            href="https://play.google.com/store/apps/details?id=com.cocode.notiyx"
+            class="bg-brandNavy text-white px-6 py-2.5 rounded-full hover:bg-brandPrimary transition-all transform active:scale-95"
+          >
+            Download
+          </a>
+        </div>
+        <button id="mobile-btn" class="md:hidden text-2xl">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-white border-b p-4 space-y-4 shadow-xl font-medium"
+      >
+        <a href="index.html" class="block text-brandPrimary">Product</a>
+        <a href="about.html" class="block">About</a>
+        <a href="privacy.html" class="block">Privacy</a>
+        <a href="terms.html" class="block">Terms</a>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <main class="pt-20">
+      <section class="relative py-20 lg:py-32 overflow-hidden">
+        <div
+          class="max-w-7xl mx-auto px-4 flex flex-col lg:flex-row items-center gap-16"
+        >
+          <div class="flex-1 text-center lg:text-left">
+            <div
+              class="inline-flex items-center px-4 py-1.5 rounded-full bg-brandPrimary/10 text-brandPrimary text-sm font-bold mb-6"
+            >
+              V1.0.0 is live 🎉
+            </div>
+            <h1 class="text-5xl lg:text-7xl font-extrabold leading-tight mb-8">
+              Notify Users <span class="gradient-text">Without Updates.</span>
+            </h1>
+            <p class="text-xl text-brandSlate mb-10 max-w-2xl mx-auto lg:mx-0">
+              Deploy in-app messages and mandatory update alerts to your Android
+              app instantly from a single dashboard.
+            </p>
+            <div
+              class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4"
+            >
+              <button
+                class="bg-brandPrimary text-white px-8 py-4 rounded-2xl font-bold text-lg hover:shadow-2xl shadow-brandPrimary/30 transition-all"
+              >
+                Get Started Free
+              </button>
+              <button
+                class="border-2 border-brandLight px-8 py-4 rounded-2xl font-bold text-lg hover:bg-brandLight transition-all"
+              >
+                View Docs
+              </button>
+            </div>
+          </div>
+          <div class="flex-1 animate-float">
+            <div
+              class="phone-mockup w-72 h-[580px] bg-[#1a1a1a] mx-auto relative overflow-hidden"
+            >
+              <div class="p-6 pt-16">
+                <div class="w-full h-4 bg-gray-800 rounded mb-4"></div>
+                <div class="grid grid-cols-2 gap-2 mb-6">
+                  <div class="h-24 bg-gray-800/50 rounded"></div>
+                  <div class="h-24 bg-gray-800/50 rounded"></div>
+                </div>
+                <div class="bg-white rounded-2xl p-5 shadow-2xl">
+                  <p
+                    class="text-[11px] font-bold text-brandPrimary mb-2 uppercase"
+                  >
+                    Update Required
+                  </p>
+                  <p class="text-[12px] text-brandNavy font-semibold mb-3">
+                    Version 2.4.1 is now available with security fixes.
+                  </p>
+                  <button
+                    class="w-full bg-brandPrimary text-white text-[10px] py-2 rounded-lg font-bold"
+                  >
+                    Update Now
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features -->
+      <section class="bg-brandLight py-24">
+        <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-8">
+          <div class="bg-white p-10 rounded-[2.5rem] shadow-sm">
+            <div
+              class="w-14 h-14 bg-brandPrimary rounded-2xl flex items-center justify-center text-white mb-6 text-2xl"
+            >
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4">Package Locked</h3>
+            <p class="text-brandSlate">
+              Secure your app using its unique package name. Identity is
+              verified to prevent spoofing.
+            </p>
+          </div>
+          <div class="bg-white p-10 rounded-[2.5rem] shadow-sm">
+            <div
+              class="w-14 h-14 bg-brandSecondary rounded-2xl flex items-center justify-center text-white mb-6 text-2xl"
+            >
+              <i class="fas fa-bullseye"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4">Topic Targeting</h3>
+            <p class="text-brandSlate">
+              Reach specific user segments or app versions with precision
+              targeting.
+            </p>
+          </div>
+          <div class="bg-white p-10 rounded-[2.5rem] shadow-sm">
+            <div
+              class="w-14 h-14 bg-[#6C5CE7] rounded-2xl flex items-center justify-center text-white mb-6 text-2xl"
+            >
+              <i class="fas fa-bolt"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4">Real-time Delivery</h3>
+            <p class="text-brandSlate">
+              Messages appear instantly in active sessions. No background
+              services required.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brandNavy text-white py-16">
+      <div
+        class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-12 border-b border-white/10 pb-12 mb-12"
+      >
+        <div class="col-span-1 md:col-span-1">
+          <!-- <div class="flex items-center mb-6 text-2xl font-bold">
+            <i class="fas fa-layer-group text-brandSecondary mr-3"></i>NotifyX
+          </div> -->
+          <div class="flex items-center mb-2">
+            <!-- <img style="width: 30px" src="../popops-logo.png" /> -->
+            <span class="text-2xl font-bold tracking-tight">PopOps</span>
+          </div>
+          <p class="text-brandSlate text-sm">
+            Communication shouldn't require a sprint cycle. Built for Android
+            developers.
+          </p>
+        </div>
+        <div>
+          <h4 class="font-bold mb-6">Product</h4>
+          <ul class="space-y-4 text-brandSlate text-sm">
+            <li><a href="index.html" class="hover:text-white">Home</a></li>
+            <li><a href="#" class="hover:text-white">Pricing</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold mb-6">Company</h4>
+          <ul class="space-y-4 text-brandSlate text-sm">
+            <li><a href="about.html" class="hover:text-white">About Us</a></li>
+            <li>
+              <a href="privacy.html" class="hover:text-white">Privacy Policy</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold mb-6">Support</h4>
+          <ul class="space-y-4 text-brandSlate text-sm">
+            <li>
+              <a href="terms.html" class="hover:text-white">Terms of Service</a>
+            </li>
+            <li><a href="#" class="hover:text-white">Documentation</a></li>
+          </ul>
+        </div>
+      </div>
+      <div
+        class="max-w-7xl mx-auto px-4 text-xs text-brandSlate text-center md:text-left"
+      >
+        © 2026 PopOps. All rights reserved.
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

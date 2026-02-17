@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="google-site-verification"
+      content="VLC1vPxIgJxZtt0yNUXhkOWasuolOcv1u3hgDdhTYnk"
+    />
+    <title>About Us | PopOps</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brandPrimary: "#0066FF",
+              brandSecondary: "#00D9FF",
+              brandNavy: "#0A1628",
+              brandSlate: "#64748B",
+              brandLight: "#F1F5F9",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="bg-white text-brandNavy">
+    <!-- Nav -->
+    <nav class="fixed w-full z-50 bg-white border-b border-brandLight">
+      <div
+        class="max-w-7xl mx-auto px-4 flex justify-between h-20 items-center"
+      >
+        <a href="index.html" class="flex items-center">
+          <img style="width: 30px" src="PopOps-logo.png" />
+          <span class="ml-3 text-2xl font-bold tracking-tight"
+            >Notify<span class="text-brandPrimary">X</span></span
+          >
+        </a>
+        <div class="hidden md:flex space-x-8 font-medium">
+          <a href="index.html" class="hover:text-brandPrimary">Product</a>
+          <a href="about.html" class="text-brandPrimary">About</a>
+          <a href="privacy.html" class="hover:text-brandPrimary">Privacy</a>
+          <a href="terms.html" class="hover:text-brandPrimary">Terms</a>
+        </div>
+        <button id="mobile-btn" class="md:hidden text-2xl">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-white p-4 space-y-4 shadow-xl"
+      >
+        <a href="index.html" class="block">Product</a>
+        <a href="about.html" class="block text-brandPrimary">About</a>
+        <a href="privacy.html" class="block">Privacy</a>
+        <a href="terms.html" class="block">Terms</a>
+      </div>
+    </nav>
+
+    <main class="pt-32 pb-24">
+      <div class="max-w-4xl mx-auto px-4">
+        <h1 class="text-4xl md:text-6xl font-extrabold mb-8">
+          Built for <span class="text-brandPrimary">Android Developers.</span>
+        </h1>
+        <p class="text-xl text-brandSlate mb-12 leading-relaxed">
+          PopOps was founded on the principle that developer-to-user
+          communication shouldn't require a constant sprint cycle or app store
+          review delays.
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-8 mb-16">
+          <div class="bg-brandLight p-8 rounded-3xl">
+            <h3 class="font-bold text-xl mb-4">The Problem</h3>
+            <p class="text-brandSlate">
+              Push notifications have 40% opt-out rates. App updates take 24-48
+              hours for review. Critical alerts can't wait for a user to check
+              their notifications.
+            </p>
+          </div>
+          <div
+            class="bg-brandPrimary/5 p-8 rounded-3xl border border-brandPrimary/10"
+          >
+            <h3 class="font-bold text-xl text-brandPrimary mb-4">
+              The PopOps Solution
+            </h3>
+            <p class="text-brandNavy">
+              Real-time, in-session messaging. When you publish a message in our
+              dashboard, it appears in your app within milliseconds of the next
+              sync.
+            </p>
+          </div>
+        </div>
+
+        <h2 class="text-3xl font-bold mb-6">Our Mission</h2>
+        <p class="text-brandSlate text-lg leading-relaxed mb-8">
+          We aim to be the standard communication layer for Android indie
+          developers and startups. By providing a lightweight SDK and a powerful
+          dashboard, we help teams maintain high engagement and ensure user
+          safety through mandatory update prompts and maintenance warnings.
+        </p>
+      </div>
+    </main>
+
+    <footer class="bg-brandNavy text-white py-12">
+      <div
+        class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-sm"
+      >
+        <div class="font-bold text-xl mb-4 md:mb-0">PopOps</div>
+        <div class="flex space-x-6 text-brandSlate">
+          <a href="index.html">Product</a>
+          <a href="about.html" class="text-white">About</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+        </div>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
